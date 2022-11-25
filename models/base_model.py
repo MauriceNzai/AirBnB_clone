@@ -3,8 +3,6 @@
 This module consists of the base class of the AirBnB_clone project
 created on Mon Nov, 21 2022
 
-@author: Maurice Haro
-
 """
 import uuid
 import datetime
