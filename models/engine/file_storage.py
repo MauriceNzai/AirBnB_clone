@@ -19,6 +19,12 @@ class FileStorage:
     __file_path = 'file.json'
     __objects = {}
 
+    def __init__(self):
+        """
+        The constractor method of the class
+        """
+        pass
+
     def all(self):
         """Returns all objects stored"""
 
