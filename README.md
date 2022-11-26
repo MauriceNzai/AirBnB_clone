@@ -36,7 +36,7 @@ The Overall objectives of this project are as listed below:
 	How to handle named arguments in a function
 
 Requirements
-The AirBnB Clone-The Console is built and tested in Ubuntu 14.04 LTS\n
+The AirBnB Clone-The Console is built and tested in Ubuntu 20.04 LTS\n
 via Vagrant in VirtualBox. Programming language python3
 
 Installation and Execution
