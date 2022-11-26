@@ -75,5 +75,6 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertEqual(dict, type(self.storage.all()))
 
+
 if __name__ == "__main__":
     unittest.main()
