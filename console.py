@@ -30,6 +30,7 @@ class HBNBCommand(cmd.Cmd):
         """
         EOF command to exit the program
         """
+        print()
         return True
 
     def do_quit(self, args):
@@ -75,7 +76,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         objects = models.storage.all()
-        this_obj_id = "{}.{}".format(line[0], line[1])
+        this_obj_id = '{}.{}'.format(line[0], line[1])
         print(objects[this_obj_id])
 
     def do_destroy(self, args):
@@ -132,6 +133,17 @@ class HBNBCommand(cmd.Cmd):
         setattr(objects[this_obj_id], line[2], line[3])
         models.storage.save()
 
+    def do_count(self, args):
+        """
+        Tracks the number of instances of a given class
+        """
+        line = args.split()
+        count = 0
+        for obj in models.storage.all().values():
+            if line[0] == obj.__class__.__name__:
+                count += 1
+        print(count)
+
     def default(self, args):
         """
         default method called when the command input starts with a class name
@@ -149,13 +161,9 @@ class HBNBCommand(cmd.Cmd):
 
         if cmd_name == "all":
             HBNBCommand.do_all(self, class_name)
-        elif cmd_name == 'count':
-            count = 0
-            for key in objects.keys():
-                this_key = key.split('.')
-                if class_name == key[0]:
-                    count += 1
-            print(count)
+        elif cmd_name == "count":
+            HBNBCommand.do_count(self, class_name)
+
         elif cmd_name == "show":
             if len(split2) < 2:
                 print("** no instance found **")
