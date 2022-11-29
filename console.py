@@ -198,7 +198,7 @@ class HBNBCommand(cmd.Cmd):
         verifies the input class name
         """
         if len(line) == 0:
-            print("** class does\'nt exist **")
+            print("** class name missing **")
             return False
         elif line[0] not in HBNBCommand.class_list:
             print("** class doesn\'t exist **")
@@ -227,7 +227,7 @@ class HBNBCommand(cmd.Cmd):
         verifies attribute in line input
         """
         if len(line) < 3:
-            print("** attribute name Missing **")
+            print("** attribute name missing **")
             return False
         elif len(line) < 4:
             print("** value missing **")
