@@ -7,3 +7,9 @@ footer {
 	bottom: 0;
 	display: table;
 }
+
+footer div {
+	display: table-cell;
+	vertical-align: middle;
+	top: 50%;
+}
